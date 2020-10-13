@@ -1,0 +1,26 @@
+version: "3"
+services:
+  next9:
+    build:
+      context: ./next9
+      dockerfile: Dockerfile
+    ports:
+      - "8080:3000"
+  nuxt2:
+    build:
+      context: ./nuxt2
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+  vue2:
+    build:
+      context: ./vue2
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+  vue3:
+    build:
+      context: ./vue3
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
