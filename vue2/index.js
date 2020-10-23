@@ -5,9 +5,10 @@ const renderer = require('vue-server-renderer').createRenderer()
 server.get('*', (req, res) => {
   const app = new Vue({
     data: {
-      url: req.url
+      url: req.url,
+      msg: 'Vue2'
     },
-    template: `<div>The visited URL is: {{ url }}</div>`
+    template: `<h1>{{ msg }}</h1>`
   })
 
   renderer.renderToString(app, (err, html) => {
@@ -15,10 +16,10 @@ server.get('*', (req, res) => {
       res.status(500).end('Internal Server Error')
       return
     }
-    res.end(`
+    res.send(`
       <!DOCTYPE html>
       <html lang="en">
-        <head><title>Hello</title></head>
+        <head><title>Vue2</title></head>
         <body>${html}</body>
       </html>
     `)

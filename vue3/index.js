@@ -4,17 +4,17 @@ const server = require('express')()
 
 server.get('*', async (req, res) => {
   const app = createSSRApp({
-    data: () => ({ msg: 'hello' }),
-    template: `<div>{{ msg }}</div>`
+    data: () => ({ msg: 'Vue3' }),
+    template: `<h1>{{ msg }}</h1>`
   })
 
   try {
     const html = await renderToString(app)
 
-    res.end(`
+    res.send(`
       <!DOCTYPE html>
       <html lang="en">
-        <head><title>Hello</title></head>
+        <head><title>Vue3</title></head>
         <body>${html}</body>
       </html>
     `)
