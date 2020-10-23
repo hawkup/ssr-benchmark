@@ -6,6 +6,7 @@
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
 
+	"forwardPorts": [8080],
 	"runArgs": ["--init"],
 	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ]
 }
